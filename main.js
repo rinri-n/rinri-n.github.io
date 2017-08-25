@@ -18,13 +18,7 @@ core.preload('sozai/ba.png');
 core.preload('sozai/cl.png');
 core.preload('sozai/go.png');
 
-core.preload('oto/start.mp3');
-core.preload('oto/kaisi.mp3');
-core.preload('oto/ive.mp3');
-core.preload('oto/game.mp3');
-core.preload('oto/atk.mp3');
-core.preload('oto/clr.mp3');
-core.preload('oto/gover.mp3');
+
 
 
 
@@ -36,13 +30,6 @@ label.y = 200;
 label.font = '70px "Arial"';
 
 
-var bgm1 = core.assets['oto/start.mp3'];
-var kaisi = core.assets['oto/kaisi.mp3'];
-var bgm2 = core.assets['oto/ive.mp3'];
-var ttk = core.assets['oto/atk.mp3'];
-var gover = core.assets['oto/gover.mp3'];
-var clr = core.assets['oto/clr.mp3'];
-var bgm3 = core.assets['oto/game.mp3'];
 
 
 var atk = 0;
@@ -59,7 +46,6 @@ var i = 0;
         start.y = 0;
         core.rootScene.addChild(start);
         start.addEventListener('touchstart', function() {
-            kaisi.play();
             startflag = 1;
         });
 
@@ -72,7 +58,7 @@ var back = new Sprite(600, 400);
         core.addEventListener('enterframe', function () {
 
 if(startflag == 0){
-      bgm1.play();
+      
 }
 
 
@@ -80,7 +66,7 @@ if(startflag == 0){
 
 if(startflag == 1){
 
-bgm1.stop();
+
 
 
 
@@ -89,19 +75,19 @@ core.rootScene.removeChild(start);
 core.rootScene.addChild(hono);
 core.rootScene.addChild(huki);
 if(iveflag == 0){
-bgm2.play();
+
 core.rootScene.addChild(koto);
 
 }
 if(iveflag == 1){
-bgm2.play();
+
 core.rootScene.removeChild(koto);
 core.rootScene.addChild(koto2);
 }
 if(iveflag == 2){
-bgm2.stop();
+
 if(gof == 0){
-bgm3.play();
+
 }
 
 core.rootScene.removeChild(back);
@@ -171,7 +157,7 @@ iveflag = 5;
 
 
 sui.addEventListener('touchstart', function() {
- ttk.play();
+
            if(atk == 0){
 i = 1;
 core.frame = 0;
@@ -230,7 +216,7 @@ if(baf == 3 && yazi.x+15 > 360 && gof == 0){
 
 
 if(clf == 1){
- clr.play();
+ 
 core.frame = 0;
 clf = 2;
 }
@@ -239,8 +225,7 @@ core.rootScene.addChild(cl);
 }
 
 if(gof == 1){
- bgm3.stop();
- gover.play();
+ 
 core.frame = 0;
 gof = 2;
 }
@@ -252,8 +237,7 @@ core.rootScene.addChild(go);
 
 
 if(iveflag == 3){
-bgm3.stop();
-bgm2.play();
+
 core.rootScene.removeChild(sui);
 core.rootScene.removeChild(ba);
 core.rootScene.removeChild(yazi);
@@ -279,8 +263,7 @@ core.rootScene.addChild(koto3);
 
 
 if(iveflag == 5){
-bgm2.stop();
-bgm3.stop();
+
 core.rootScene.removeChild(sui);
 core.rootScene.removeChild(ba);
 core.rootScene.removeChild(yazi);
@@ -359,7 +342,7 @@ var koto3 = new Sprite(600, 100);
 koto3.image = core.assets['sozai/koto3.png'];
 koto3.x = 0;
 koto3.y = 300;
- koto3.addEventListener('touchstart', function() {
+koto3.addEventListener('touchstart', function() {
             iveflag = 5;
         });
 
